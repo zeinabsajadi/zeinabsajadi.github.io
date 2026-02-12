@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
 
     #app
-    'accounts'
+    'blog'
 ]
 
 MIDDLEWARE = [
