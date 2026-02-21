@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+```
+
+## جریان اجرای برنامه:
+```
+1. index.html (نقطه ورود مرورگر)
+   └── <div id="root"></div>
+        ↓
+2. index.js (نقطه ورود React)
+   └── ReactDOM.createRoot(document.getElementById('root'))
+        ↓
+3. App.jsx (کامپوننت اصلی)
+   └── Hero, About, Skills, Projects, Courses, Contact
+        ↓
+4. هر کامپوننت فایل CSS خود را دارد
