@@ -1,0 +1,269 @@
+.courses-section {
+  direction: rtl;
+  margin: 60px 0;
+}
+
+.courses-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 30px;
+  justify-content: center;
+  align-items: flex-end;
+  perspective: 2000px;
+}
+
+.course-book {
+  position: relative;
+  width: 180px;
+  height: 280px;
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.book-spine {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, 
+      var(--leather-light) 0%,
+      var(--leather-medium) 30%,
+      var(--leather-dark) 70%,
+      var(--leather-medium) 100%
+    );
+  border-radius: 0 8px 8px 0;
+  box-shadow: 
+    inset -3px 0 10px rgba(0, 0, 0, 0.4),
+    inset 3px 0 10px rgba(255, 255, 255, 0.1),
+    5px 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  border: 2px solid rgba(139, 111, 71, 0.3);
+  border-left: none;
+}
+
+.book-spine::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: 
+    linear-gradient(to right,
+      rgba(0, 0, 0, 0.3),
+      transparent
+    );
+}
+
+.book-spine::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 10%;
+  width: 5px;
+  height: 80%;
+  background: var(--leather-dark);
+  box-shadow: 
+    inset 2px 0 4px rgba(0, 0, 0, 0.6),
+    -2px 0 8px rgba(0, 0, 0, 0.4);
+  border-radius: 0 2px 2px 0;
+}
+
+.spine-decoration {
+  width: 100%;
+  height: 3px;
+  background: var(--gold);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.spine-decoration.top {
+  margin-bottom: 10px;
+}
+
+.spine-decoration.bottom {
+  margin-top: 10px;
+}
+
+.book-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 2px;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    0 -1px 1px rgba(255, 255, 255, 0.2);
+  line-height: 1.4;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.book-cover {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, 
+      var(--leather-medium) 0%,
+      var(--leather-dark) 50%,
+      var(--leather-medium) 100%
+    );
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 20px rgba(0, 0, 0, 0.4),
+    8px 12px 35px rgba(0, 0, 0, 0.7);
+  transform: rotateY(0deg);
+  transform-origin: left;
+  transition: transform 0.6s ease;
+  border: 3px solid rgba(139, 111, 71, 0.4);
+  overflow: hidden;
+}
+
+.course-book:hover .book-cover {
+  transform: rotateY(-30deg);
+}
+
+.cover-image-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cover-default {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.cover-emblem {
+  width: 80px;
+  height: 80px;
+  background: 
+    radial-gradient(circle, var(--gold) 0%, var(--bronze) 100%);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 3px 6px rgba(255, 255, 255, 0.3),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.4),
+    0 6px 12px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(212, 175, 55, 0.5);
+  position: relative;
+}
+
+.cover-emblem::before {
+  content: '📚';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.cover-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-align: center;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.6);
+  line-height: 1.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .courses-shelf {
+    gap: 25px;
+    padding: 30px 20px;
+  }
+
+  .course-book {
+    width: 150px;
+    height: 240px;
+  }
+
+  .book-title {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
+  .cover-emblem {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cover-emblem::before {
+    font-size: 28px;
+  }
+
+  .cover-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-shelf {
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .course-book {
+    width: 130px;
+    height: 200px;
+  }
+
+  .book-spine {
+    padding: 15px 8px;
+  }
+
+  .book-title {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .cover-default {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .cover-emblem {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cover-emblem::before {
+    font-size: 24px;
+  }
+
+  .cover-title {
+    font-size: 0.9rem;
+  }
+}
