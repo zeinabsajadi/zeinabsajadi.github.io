@@ -20,6 +20,7 @@
 .hero-content {
   display: flex;
   align-items: center;
+  justify-content: center;  /* اضافه شد - محتوای اصلی رو وسط چین کن */
   gap: 80px;
   max-width: 1400px;
   width: 100%;
@@ -87,9 +88,17 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
 }
 
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 .hero-text {
   flex: 1;
-  text-align: right;
+  text-align: center;  /* تغییر از right به center */
 }
 
 .display-title {
@@ -101,7 +110,7 @@
   width: 200px;
   height: 4px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  margin: 30px 0;
+  margin: 30px auto;  /* تغییر از 30px 0 به 30px auto */
   border-radius: 2px;
   box-shadow: 0 0 20px var(--glow-primary);
 }
@@ -121,12 +130,15 @@
   line-height: 1.8;
   margin-bottom: 40px;
   max-width: 600px;
+  margin-left: auto;   /* اضافه شد - برای مرکز چین */
+  margin-right: auto;  /* اضافه شد - برای مرکز چین */
 }
 
 .hero-cta {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;  /* اضافه شد - دکمه‌ها رو وسط چین کن */
 }
 
 .cyber-button {
