@@ -112,7 +112,7 @@ const Hero = () => {
           <div className="badge-ring"></div>
           <div className="badge-ring"></div>
           <div className="badge-inner">
-            <span className="badge-emoji">🚀</span>
+            <span className="badge-emoji">𓆟𓆝</span>
           </div>
         </motion.div>
 
@@ -145,21 +145,21 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
           >
                           <h3 className="about-heading">
-                <span className="heading-icon">👨‍💻</span>
+                <span className="heading-icon">🐟</span>
                   Backend Engineer | Designer
               </h3>
           </motion.h2>
 
           <motion.p 
-            className="hero-description"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-          >
-              Backend Developer who learns deeply and fast — turning concepts into scalable, lasting systems. 
-              Passionate about Python, Django, SQL, and growing into AI-driven architectures. 
-              For me, coding is not just writing code, but shaping ideas into reality.
-          </motion.p>
+  className="hero-description text-center"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 1.4 }}
+>
+  Backend Developer who learns deeply and fast — turning concepts into scalable, lasting systems. 
+  Passionate about Python, Django, SQL, and growing into AI-driven architectures. 
+  For me, coding is not just writing code, but shaping ideas into reality.
+</motion.p>
 
           <motion.div 
             className="hero-cta"
