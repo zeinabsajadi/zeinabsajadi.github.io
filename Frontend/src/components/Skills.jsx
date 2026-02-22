@@ -1,77 +1,104 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 import './Skills.css';
 
 const Skills = ({ techs }) => {
   return (
-    <motion.section 
-      className="skills-section"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="skills-card leather-card">
-        <motion.div 
-          className="section-header"
-          initial={{ opacity: 0, y: 20 }}
+    <section className="skills-section">
+      <div className="skills-container">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title embossed-text">مهارت‌های تکنیکی</h2>
-          <div className="title-underline"></div>
-        </motion.div>
+          مهارت‌های تکنیکی
+        </motion.h2>
 
         <div className="skills-grid">
           {techs.map((tech, index) => (
-            <motion.div
+            <Tilt
               key={tech.id}
-              className="skill-badge-container"
-              initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
-              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                delay: index * 0.1, 
-                duration: 0.6,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ 
-                scale: 1.1,
-                rotateY: 15,
-                transition: { duration: 0.3 }
-              }}
+              tiltMaxAngleX={20}
+              tiltMaxAngleY={20}
+              perspective={1000}
+              scale={1.08}
+              transitionSpeed={2000}
             >
-              <div className="skill-badge metal-badge">
-                {tech.icon ? (
-                  <img 
-                    src={tech.icon} 
-                    alt={tech.name}
-                    className="skill-icon-img"
+              <motion.div
+                className="skill-card glass-card"
+                initial={{ opacity: 0, y: 50, rotateX: -30 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.6,
+                  delay: index * 0.08
+                }}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <div className="skill-glow-ring"></div>
+                
+                <div className="skill-icon-wrapper">
+                  {tech.icon ? (
+                    <img 
+                      src={tech.icon} 
+                      alt={tech.name}
+                      className="skill-icon-img"
+                    />
+                  ) : (
+                    <div className="skill-icon-placeholder">
+                      <span className="skill-initial">
+                        {tech.name.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                  <div className="skill-icon-glow"></div>
+                </div>
+
+                <h3 className="skill-name">{tech.name}</h3>
+
+                <div className="skill-level-bar">
+                  <motion.div 
+                    className="skill-level-fill"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '85%' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
                   />
-                ) : (
-                  <div className="skill-icon-placeholder">
-                    <span className="skill-initial">
-                      {tech.name.charAt(0)}
-                    </span>
-                  </div>
-                )}
-              </div>
-              <div className="skill-nameplate">
-                <span className="skill-name engraved-text">{tech.name}</span>
-              </div>
-            </motion.div>
+                </div>
+
+                <div className="skill-hexagon">
+                  <svg viewBox="0 0 100 100" className="hexagon-svg">
+                    <polygon
+                      points="50 1 95 25 95 75 50 99 5 75 5 25"
+                      className="hexagon-shape"
+                    />
+                  </svg>
+                </div>
+              </motion.div>
+            </Tilt>
           ))}
         </div>
 
         {techs.length === 0 && (
-          <div className="empty-state parchment-section">
+          <motion.div 
+            className="empty-state glass-card"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="empty-icon">🔧</div>
             <p className="empty-message">هنوز مهارتی اضافه نشده است</p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </motion.section>
+    </section>
   );
 };
 

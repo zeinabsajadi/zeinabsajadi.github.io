@@ -1,80 +1,121 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 import './Courses.css';
 
 const Courses = ({ courses }) => {
   return (
-    <motion.section 
-      className="courses-section"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="courses-card leather-card">
-        <motion.div 
-          className="section-header"
-          initial={{ opacity: 0, y: 20 }}
+    <section className="courses-section">
+      <div className="courses-container">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title embossed-text">دوره‌های آموزشی</h2>
-          <div className="title-underline"></div>
-        </motion.div>
+          دوره‌های آموزشی
+        </motion.h2>
 
-        <div className="courses-shelf">
+        <div className="courses-grid">
           {courses.map((course, index) => (
-            <motion.div
+            <Tilt
               key={course.id}
-              className="course-book"
-              initial={{ opacity: 0, rotateY: -90 }}
-              whileInView={{ opacity: 1, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                delay: index * 0.1, 
-                duration: 0.6,
-                type: "spring"
-              }}
-              whileHover={{ 
-                rotateY: 15,
-                translateY: -10,
-                transition: { duration: 0.3 }
-              }}
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={1000}
+              scale={1.05}
+              transitionSpeed={2000}
             >
-              <div className="book-spine">
-                <div className="spine-decoration top"></div>
-                <h3 className="book-title">{course.title}</h3>
-                <div className="spine-decoration bottom"></div>
-              </div>
+              <motion.div
+                className="course-card glass-card"
+                initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
+                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.7,
+                  delay: index * 0.12
+                }}
+              >
+                <div className="course-glow"></div>
 
-              <div className="book-cover">
+                <div className="course-number">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+
                 {course.image ? (
-                  <div className="cover-image-wrapper">
+                  <div className="course-image-wrapper">
                     <img 
                       src={course.image} 
                       alt={course.title}
-                      className="cover-image"
+                      className="course-image"
                     />
+                    <div className="course-image-overlay"></div>
                   </div>
                 ) : (
-                  <div className="cover-default">
-                    <div className="cover-emblem"></div>
-                    <h4 className="cover-title">{course.title}</h4>
+                  <div className="course-icon-wrapper">
+                    <div className="course-icon-bg">
+                      <span className="course-icon">📚</span>
+                    </div>
                   </div>
                 )}
-              </div>
-            </motion.div>
+
+                <div className="course-content">
+                  <h3 className="course-title">{course.title}</h3>
+                  
+                  <div className="course-status">
+                    <div className="status-bar">
+                      <motion.div 
+                        className="status-fill"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '100%' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, delay: index * 0.15 + 0.5 }}
+                      />
+                    </div>
+                    <span className="status-label">تکمیل شده</span>
+                  </div>
+
+                  <div className="course-badge-container">
+                    <div className="course-badge">
+                      <span className="badge-icon">✓</span>
+                      گواهینامه
+                    </div>
+                  </div>
+                </div>
+
+                <div className="course-particles">
+                  {[...Array(5)].map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="particle" 
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        animationDelay: `${Math.random() * 3}s`
+                      }}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </Tilt>
           ))}
         </div>
 
         {courses.length === 0 && (
-          <div className="empty-state parchment-section">
+          <motion.div 
+            className="empty-state glass-card"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="empty-icon">🎓</div>
             <p className="empty-message">هنوز دوره‌ای اضافه نشده است</p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </motion.section>
+    </section>
   );
 };
 
