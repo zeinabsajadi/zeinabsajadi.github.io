@@ -14,7 +14,7 @@ const Projects = ({ projects }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          پروژه‌ها
+         Projects
         </motion.h2>
 
         <div className="projects-grid">

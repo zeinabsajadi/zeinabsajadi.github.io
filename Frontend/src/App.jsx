@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 import Hero from './components/Hero';
-import About from './components/About';
+//import About from './components/About';//
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Courses from './components/Courses';
+//import Courses from './components/Courses';//
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import Background3D from './components/Background3D';
@@ -84,7 +84,7 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            در حال بارگذاری تجربه دیجیتال...
+           loading
           </motion.p>
         </div>
       </div>
@@ -98,10 +98,10 @@ function App() {
       
       <div className="content-wrapper">
         <div id="hero"><Hero /></div>
-        <div id="about"><About /></div>
+        {/*<div id="about"><About /></div>*/}
         <div id="skills"><Skills techs={data.techs} /></div>
         <div id="projects"><Projects projects={data.projects} /></div>
-        <div id="courses"><Courses courses={data.courses} /></div>
+        {/*<div id="courses"><Courses courses={data.courses} /></div>*/}
         <div id="contact"><Contact contacts={data.contacts} /></div>
       </div>
 

@@ -6,12 +6,12 @@ const Navigation = ({ activeSection }) => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { id: 'hero', label: 'خانه', icon: '🏠' },
-    { id: 'about', label: 'درباره', icon: '👤' },
-    { id: 'skills', label: 'مهارت‌ها', icon: '⚡' },
-    { id: 'projects', label: 'پروژه‌ها', icon: '💼' },
-    { id: 'courses', label: 'دوره‌ها', icon: '📚' },
-    { id: 'contact', label: 'تماس', icon: '📧' },
+    { id: 'hero', label: 'home', icon: '🏠' },
+    //{ id: 'about', label: 'درباره', icon: '👤' },//
+    { id: 'skills', label: 'Tech', icon: '⚡' },
+    { id: 'projects', label: 'projects', icon: '💼' },
+    //{ id: 'courses', label: 'دوره‌ها', icon: '📚' },//
+    { id: 'contact', label: 'contact', icon: '📧' },
   ];
 
   useEffect(() => {
@@ -43,8 +43,8 @@ const Navigation = ({ activeSection }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="logo-icon">⚛</span>
-          <span className="logo-text">Portfolio</span>
+          <span className="logo-icon">Zi</span>
+          <span className="logo-text">Zi Dev</span>
         </motion.div>
 
         <ul className="nav-menu">

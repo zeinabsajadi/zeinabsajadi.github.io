@@ -14,7 +14,7 @@ const Contact = ({ contacts }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          ارتباط با من
+          Contact me
         </motion.h2>
 
         <motion.div 
@@ -26,8 +26,7 @@ const Contact = ({ contacts }) => {
         >
           <div className="intro-icon">📡</div>
           <p className="intro-text">
-            آماده همکاری در پروژه‌های چالش‌برانگیز و خلاقانه هستم. 
-            برای شروع یک پروژه جدید، مشاوره فنی یا هر سوالی، می‌توانید از طریق کانال‌های زیر با من در ارتباط باشید.
+          Ready for your next big idea! Let's collaborate on challenging projects. Reach out through the channels below for any questions or technical consultation.
           </p>
         </motion.div>
 
@@ -112,7 +111,7 @@ const Contact = ({ contacts }) => {
         >
           <div className="footer-divider"></div>
           <p className="footer-message">
-            ساخته شده با 💙 و تکنولوژی‌های مدرن
+            All Rights Reserved [zi] - 2026
           </p>
           <div className="footer-year">
             {new Date().getFullYear()}

@@ -14,7 +14,7 @@ const Courses = ({ courses }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          دوره‌های آموزشی
+          Courses
         </motion.h2>
 
         <div className="courses-grid">

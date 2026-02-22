@@ -7,23 +7,23 @@ const About = () => {
   const features = [
     {
       icon: '🎯',
-      title: 'تمرکز بر کیفیت',
-      description: 'کد تمیز، قابل نگهداری و مستند'
+      title: 'Focus on Quality',
+      description: 'Clean, maintainable, and documented code'
     },
     {
       icon: '⚡',
-      title: 'عملکرد بالا',
-      description: 'بهینه‌سازی و مقیاس‌پذیری'
+      title: 'High Performance',
+      description: 'Optimization and scalability'
     },
     {
       icon: '🔒',
-      title: 'امنیت',
-      description: 'رعایت استانداردهای امنیتی'
+      title: 'Security',
+      description: 'Following security standards'
     },
     {
       icon: '🚀',
-      title: 'نوآوری',
-      description: 'استفاده از جدیدترین تکنولوژی‌ها'
+      title: 'Innovation',
+      description: 'Using the latest technologies'
     }
   ];
 
@@ -37,7 +37,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          درباره من
+         About me
         </motion.h2>
 
         <div className="about-content">
@@ -50,33 +50,12 @@ const About = () => {
           >
             <div className="glass-card about-text-card">
               <div className="holographic-border"></div>
+
+
               
-              <h3 className="about-heading">
-                <span className="heading-icon">👨‍💻</span>
-                توسعه‌دهنده Backend حرفه‌ای
-              </h3>
-
-              <p className="about-paragraph">
-                من یک توسعه‌دهنده Backend با تجربه هستم که تخصص من در طراحی و پیاده‌سازی 
-                سیستم‌های پیچیده سمت سرور است. با استفاده از تکنولوژی‌های مدرن و بهترین 
-                شیوه‌های برنامه‌نویسی، برنامه‌هایی قدرتمند، مقیاس‌پذیر و امن می‌سازم.
-              </p>
-
-              <p className="about-paragraph">
-                علاقه‌مند به یادگیری مداوم و به‌روز نگه‌داشتن دانش خود با جدیدترین تکنولوژی‌ها 
-                و الگوهای طراحی هستم. هدف من ایجاد راه‌حل‌های نرم‌افزاری است که نه تنها 
-                کارآمد و بهینه باشند، بلکه قابل نگهداری و توسعه در آینده نیز باشند.
-              </p>
-
-              <p className="about-paragraph">
-                تمرکز من بر روی کیفیت کد، معماری نرم‌افزار و بهینه‌سازی عملکرد است. 
-                من معتقدم که یک برنامه‌نویس خوب باید همواره در تلاش برای بهبود و یادگیری باشد.
-              </p>
-
-              <div className="about-signature">
-                <div className="signature-line"></div>
-                <span className="signature-text">امضای دیجیتال</span>
-              </div>
+              
+                
+              
             </div>
           </motion.div>
 
@@ -123,10 +102,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="badge-glow-bg"></div>
-              <div className="experience-content">
-                <div className="experience-number">5+</div>
-                <div className="experience-label">سال تجربه حرفه‌ای</div>
-              </div>
+              
             </motion.div>
           </div>
         </div>

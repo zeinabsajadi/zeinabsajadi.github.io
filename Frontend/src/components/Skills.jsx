@@ -14,7 +14,7 @@ const Skills = ({ techs }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          مهارت‌های تکنیکی
+         Skills
         </motion.h2>
 
         <div className="skills-grid">

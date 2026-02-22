@@ -128,7 +128,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
           >
-            [نام شما]
+            [Zeinab Sadat Sajjadi Nasab]
           </motion.h1>
 
           <motion.div 
@@ -144,7 +144,10 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            Backend Developer
+                          <h3 className="about-heading">
+                <span className="heading-icon">👨‍💻</span>
+                  Backend Engineer | Designer
+              </h3>
           </motion.h2>
 
           <motion.p 
@@ -153,7 +156,9 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            ساخت سیستم‌های قدرتمند و مقیاس‌پذیر با تکنولوژی‌های پیشرفته
+              Backend Developer who learns deeply and fast — turning concepts into scalable, lasting systems. 
+              Passionate about Python, Django, SQL, and growing into AI-driven architectures. 
+              For me, coding is not just writing code, but shaping ideas into reality.
           </motion.p>
 
           <motion.div 
@@ -166,7 +171,7 @@ const Hero = () => {
               className="cyber-button primary"
               onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
             >
-              <span>مشاهده پروژه‌ها</span>
+              <span>View Projects</span>
               <span className="button-glow"></span>
             </button>
             
@@ -174,7 +179,7 @@ const Hero = () => {
               className="cyber-button secondary"
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
             >
-              <span>تماس با من</span>
+              <span>Contact Me</span>
               <span className="button-glow"></span>
             </button>
           </motion.div>
@@ -195,28 +200,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.8 }}
           >
             <div className="card-glow-effect"></div>
-            <div className="stats-grid">
-              <div className="stat-item">
-                <div className="stat-icon">💼</div>
-                <div className="stat-value">50+</div>
-                <div className="stat-label">پروژه</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">⚡</div>
-                <div className="stat-value">10+</div>
-                <div className="stat-label">تکنولوژی</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">🎓</div>
-                <div className="stat-value">20+</div>
-                <div className="stat-label">دوره</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">⭐</div>
-                <div className="stat-value">5</div>
-                <div className="stat-label">سال تجربه</div>
-              </div>
-            </div>
+
           </motion.div>
         </Tilt>
       </div>
@@ -230,7 +214,7 @@ const Hero = () => {
         <div className="mouse">
           <div className="wheel"></div>
         </div>
-        <p>اسکرول کنید</p>
+        <p>Scroll</p>
       </motion.div>
     </section>
   );
