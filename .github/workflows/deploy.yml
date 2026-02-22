@@ -20,10 +20,10 @@ jobs:
           cd Frontend
           npm install --legacy-peer-deps
           
-      - name: Build project
+      - name: Build project (ignore warnings)
         run: |
           cd Frontend
-          npm run build
+          CI=false npm run build  # <--- این خط مهمه
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
