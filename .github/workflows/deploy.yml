@@ -22,13 +22,13 @@ jobs:
           
       - name: Build project
         run: |
-          cd frontend
+          cd Frontend
           npm run build
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./frontend/build
+          path: ./Frontend/build
 
   deploy:
     needs: build
