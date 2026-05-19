@@ -1,11 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // --- Rendering ---
-  ssr: false, 
+  ssr: false,  
+
+  // --- GitHub Pages preset ---
+  nitro: {
+    preset: 'github-pages'
+  },
 
   // --- App Base + Head ---
   app: {
-    baseURL: '/portfolio/', 
+    baseURL: '/',   
+
     head: {
       title: 'Zeinab Sajjadi',
       meta: [
@@ -18,7 +24,8 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#050505' },
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' }, 
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
           rel: 'preconnect',
@@ -42,10 +49,10 @@ export default defineNuxtConfig({
   // --- Global Styles ---
   css: ['~/assets/css/main.css'],
 
-  // --- Build & Vite config ---
+  // --- Build & Vite ---
   vite: {
     server: {
-      host: true, 
+      host: true,
     },
   },
 
