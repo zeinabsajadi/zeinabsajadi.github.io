@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   // --- App Base + Head ---
   app: {
     baseURL: '/',   
+    buildAssetsDir: '/_nuxt/',
 
     head: {
       title: 'Zeinab Sajjadi',
