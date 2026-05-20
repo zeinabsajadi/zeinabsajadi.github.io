@@ -1,18 +1,12 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // --- Rendering ---
-  ssr: false,  
+  ssr: false,
 
-  // --- GitHub Pages preset ---
   nitro: {
-    preset: 'github_pages'
+    preset: 'static'
   },
 
-  // --- App Base + Head ---
   app: {
-    baseURL: '/',   
-    buildAssetsDir: '/_nuxt/',
-
+    baseURL: '/',
     head: {
       title: 'Zeinab Sajjadi',
       meta: [
@@ -26,12 +20,11 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
           rel: 'preconnect',
           href: 'https://fonts.gstatic.com',
-          crossorigin: '',
+          crossorigin: 'anonymous',
         },
         {
           rel: 'stylesheet',
@@ -41,25 +34,23 @@ export default defineNuxtConfig({
     },
   },
 
-  // --- Modules ---
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/motion/nuxt',
   ],
 
-  // --- Global Styles ---
   css: ['~/assets/css/main.css'],
 
-  // --- Build & Vite ---
-  vite: {
-    server: {
-      host: true,
-    },
+  routeRules: {
+    '/**': { prerender: true }
   },
 
-  // --- Compatibility ---
-  compatibilityDate: '2024-11-01',
+  vite: {
+    server: {
+      host: true
+    }
+  },
 
-  // --- DevTools ---
-  devtools: { enabled: true },
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true }
 })
