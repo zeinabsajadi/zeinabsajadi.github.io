@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   // --- GitHub Pages preset ---
   nitro: {
-    preset: 'github-pages'
+    preset: 'github_pages'
   },
 
   // --- App Base + Head ---
